@@ -11,7 +11,7 @@ gulp.task('build', function() {
     // return gulp.src('./slique.css')
     return gulp.src(sassDir)
 
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 
         /* Uncomment reddit resources, e.g. background: url(%%image%%); */
         .pipe(replace(/\/\*(?:(?:.|\n)(?:(?!\*\/)))*?(.*%%.*;)(?:.|\n)*?\*\//g,'$1'))
